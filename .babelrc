@@ -1,0 +1,13 @@
+{
+    "presets": [
+        "@babel/preset-env"
+    ], // 
+    "plugins": [
+        ["@babel/transform-arrow-functions"],
+        ["@babel/plugin-proposal-decorators",{"legacy":true}],
+        ["@babel/plugin-proposal-function-sent"],
+        ["@babel/plugin-proposal-export-namespace-from"],
+        ["@babel/plugin-proposal-numeric-separator"],
+        ["@babel/plugin-proposal-throw-expressions"]
+    ] // same as "@babel/plugin-transform-arrow-functions"
+}
