@@ -40,7 +40,7 @@ class NeuralNet {
                 hSums[j] += this.iNodes[i] * this.ihWeights[i][j]
             }
             // 使用偏置补偿(k = ax + b)
-            hSums[j] += this.hBiases
+            hSums[j] += this.hBiases[j]
             this.hNodes[j] = hyperTan(hSums[j])
         }
         console.log("\n Internal hidden node values = ")
