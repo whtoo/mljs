@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --out-dir lib",
-    "start": "npm run build && node lib/index.js"
+    "build": "rm -rf lib/* && babel src --out-dir lib",
+    "start": "npm run build && npm run dev",
+    "dev": "babel-node src/neural/inputOutput/nn_io.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.7",
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/plugin-proposal-export-namespace-from": "^7.8.3",
     "@babel/plugin-proposal-function-sent": "^7.8.3",
