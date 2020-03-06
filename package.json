@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -rf lib/* && babel src --out-dir lib",
     "start": "npm run build && npm run dev",
-    "dev": "babel-node src/neural/inputOutput/nn_io.js"
+    "dev": "babel-node src/neural/Iris/iris_nn.js"
   },
   "author": "",
   "license": "ISC",

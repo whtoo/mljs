@@ -1,5 +1,22 @@
 
 let process = require("process")
+let FS = require('fs')
+
+function loadTxt(fn, delimit, usecols) {
+    let all = FS.readFileSync(fn, "utf8");  // giant string
+    all = all.trim();  // strip final crlf in file
+    let lines = all.split("\n");
+    let rows = lines.length;
+    let cols = usecols.length;
+    let result = matMake(rows, cols, 0.0); 
+    for (let i = 0; i < rows; ++i) {  // each line
+      let tokens = lines[i].split(delimit);
+      for (let j = 0; j < cols; ++j) {
+        result[i][j] = parseFloat(tokens[usecols[j]]);
+      }
+    }
+    return result;
+}
 
 function arange(n) {
     let result = []
@@ -147,5 +164,6 @@ export {
     hyperTan,
     logSig,
     vecMax,
-    softmax, 
+    softmax,
+    loadTxt
 }
